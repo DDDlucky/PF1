@@ -1,0 +1,29 @@
+<table class='table'>
+  <thead>
+    <tr>
+      <th>image</th>
+      <th>name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% users.each do |user| %>
+      <tr>
+        <td><%= attachment_image_tag(user, :profile_image, :fill, 50, 50, fallback: "no-image-icon.jpg") %></td>
+        <td><%= user.name %></td>
+        <td class="iphone_none"><%= "フォロー数：#{user.following.count}" %></td>
+        <td class="iphone_none"><%= "フォロワー数：#{user.followers.count}" %></td>
+        <td>
+          <% unless current_user == user %>
+          <% if fid = current_user.active_relationships.find_by(followed_id: user.id) %>
+            <%= link_to "フォローを外す", relationship_path(fid.id), method: :delete,class: "btn btn-light" %>
+          <% else %>
+            <%= link_to "フォローする", relationships_path(followed_id: user.id), method: :post, class: "btn btn-dark" %>
+          <% end %>
+          <% end %>
+        </td>
+        <td><%= link_to 'Show', user_path(user), class: "user_#{user.id} btn btn-light" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,146 @@
+// Place all the styles related to the Homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.homes_top{
+	// background-color: #dcdcdc;
+	 position: relative;
+}
+.homes_top_box img{
+	width: 100%;
+	height: 600px;
+}
+.homes_top_item h1{
+	font-size: 60px;
+	// font-weight: 700;
+	padding-top: 110px;
+	padding-bottom: 50px;
+	color: white;
+}
+.homes_top_item p{
+	font-size: 22px;
+	color: white;
+}
+.homes_top_link_box{
+	padding-bottom: 150px;
+	padding-top: 50px;
+}
+.homes_top_item{
+	position: absolute;
+    top: 60px;
+    left: 120px;
+}
+.homes_top_user_singin_up{
+	margin-right: 80px;
+}
+.homes_midole{
+	background-color: #4f4943;
+	max-width: 100%;
+}
+.homes_midole p{
+	color: white;
+	font-weight: 500;
+	font-size: 25px;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	line-height: 50px;
+	letter-spacing: 1.5px;
+}
+.homes_midole_items{
+	margin-top: 40px;
+}
+.homes_midole_item1 img{
+	width: 100%;
+	height: 400px;
+}
+.homes_midole_item1_top{
+	padding-left: 100px;
+}
+.homes_midole_item1_top h2{
+	padding-bottom: 20px;
+	font-size: 40px;
+}
+.homes_midole_item1_top p{
+	font-weight: 500;
+	font-size: 23px;
+}
+.homes_midole_item2 img{
+	width: 90%;
+	height: 400px;
+}
+.homes_midole_item2_box{
+	margin-top: 50px;
+	background-color: #4f4943;
+}
+.homes_midole_item2_midole{
+	padding-left: 70px;
+}
+.homes_midole_item2_midole h2{
+	padding-bottom: 20px;
+	font-size: 40px;
+}
+.homes_midole_item2_midole p{
+	font-weight: 500;
+	font-size: 23px;
+}
+.homes_bottom_item3_box{
+	margin-top: 50px;
+}
+.homes_bottom_item3 img{
+	width: 90%;
+	height: 400px;
+}
+.homes_bottom_item2_bottom{
+	padding-left: 100px;
+}
+.homes_bottom_item2_bottom h2{
+	padding-bottom: 20px;
+	font-size: 40px;
+}
+.homes_bottom_item2_bottom p{
+	font-weight: 500;
+	font-size: 23px;
+}
+
+/*ウィンドウ幅が最大479pxまでの場合に適用*/
+@media screen and (max-width: 479px) {
+	.homes_top_item{
+    	top: 20px;
+    	left: 10px;
+	}
+	.homes_top_item h1{
+		font-size: 50px;
+		padding-top: 80px;
+		padding-bottom: 50px;
+	}
+	.homes_top_item p{
+		font-size: 15px;
+	}
+	.homes_top_user_singin_up{
+		margin-bottom: 40px;
+		margin-right: 0;
+	}
+	.homes_midole_item1_top{
+		padding-top: 30px;
+		padding-left: 0;
+	}
+	.homes_midole_item2_box {
+  		flex-direction: column-reverse;
+	}
+	.homes_midole_item2_midole{
+		padding-left: 0;
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+	.homes_midole_item2 img{
+		margin-top: 40px;
+		width: 100%;
+	}
+	.homes_bottom_item2_bottom{
+		padding-left: 0;
+		padding-top: 40px;
+	}
+	.homes_bottom_item3 img{
+		width: 100%;
+	}
+}

@@ -1,0 +1,3 @@
+$(".commentlist-box-<%= @book.id %>").html("<%= j (render 'books/commentlist', book: @book) %>");
+$(".commentform-box-<%= @book.id %>").html("<%= j (render 'books/commentform', book: @book) %>");
+$("#bookcomment-number").html("コメント数：<%= @book.book_comments.count %>");

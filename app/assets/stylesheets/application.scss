@@ -1,0 +1,95 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+*{
+  padding: 0;
+  margin: 0;
+}
+// ヘッダーを上部に固定
+header{
+  z-index: 9999;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  width: 100%;
+}
+// footerを最下部に固定
+.footerFixed{
+    min-height: 100vh; /* ←コンテンツの高さの最小値＝ブラウザの高さに指定 */
+    position: relative;/* ←相対位置 */
+    padding-bottom: 60px; /* ←フッターの高さを指定 */
+    box-sizing: border-box;
+}
+// footerを最下部に固定
+footer{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+// body {
+//   background-image: image-url("hoge.jpg");
+// }
+
+// 固定したヘッダーに要素が隠れないようにするため
+main{
+	margin-top: 100px;
+}
+
+.header_search_form span{
+  padding-right: 5px;
+}
+
+.fa, .fas {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 600;
+  line-height: normal;
+}
+
+#notice {
+  color: green;
+}
+
+#error_explanation {
+  color: red;
+}
+
+// div {
+//   &.field, &.actions {
+//     // margin-bottom: 10px;
+//   }
+// }
+
+// .search-form {
+//   text-align: center;
+// }
+.header_title{
+  color: white;
+    font-weight: 600;
+}
+@media screen and (max-width: 479px) {
+  .header_search_form{
+    font-size: 10px;
+  }
+  .header_title{
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+  }
+}

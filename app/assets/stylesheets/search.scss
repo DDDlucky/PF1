@@ -1,0 +1,36 @@
+// Place all the styles related to the search controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.rakuten-search-btn{
+	margin-left: 10px;
+}
+.rakuten_items{
+	display: block;
+	padding-right: 30px;
+	margin-bottom: 80px;
+}
+.rakuten_items img{
+	height: 200px;
+	width: 45%;
+}
+.rakuten_items ul{
+	display: block;
+	padding-top: 30px;
+	list-style: none;
+}
+.search_tops_button{
+	right: 10px;
+	z-index: 9999;
+	bottom: 10px;
+	position: fixed;
+}
+/*ウィンドウ幅が最大479pxまでの場合に適用*/
+@media screen and (max-width: 479px) {
+	.rankuten_search_form input{
+		font-size: 10px;
+	}
+	.rakuten_items img{
+		height: 250px;
+		width: 80%;
+	}
+}

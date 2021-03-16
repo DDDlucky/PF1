@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 chat_show_top">
+      <h2 class="text-left font-weight-bold" id="room" data-room="<%= @room.id %>" data-user="<%= current_user.id %>"><%= @user.name %> さんとのチャット</h2>
+    </div>
+  </div>
+</div>
+<table class="message chat_table">
+   <thead class="chat_table_name">
+    <tr>
+      <th class="caht_table_current_name h2"><%= current_user.name %></th>
+      <th class="caht_table_user_name h2"><%= @user.name %></th>
+    </tr>
+  </thead>
+  <% @chats.each do |chat| %>
+    <% if chat.user_id == current_user.id %>
+    <tbody>
+      <tr>
+        <th class="chat_messages">
+          <p style="text-align: left;" class="h4 p-3 mb-2 bg-light text-dark rounded-right rounded-top border-top-0 font-weight-normal"><%= chat.message %></p>
+        </th>
+        <th></th>
+      </tr>
+    </tbody>
+    <% else %>
+    <tbody>
+      <tr>
+        <th></th>
+        <th>
+          <p style="text-align: right;" class="h4 p-3 mb-2 bg-dark text-white rounded-left rounded-top border-top-0 font-weight-normal text-wrap"><%= chat.message %></p>
+        </th>
+      </tr>
+    </tbody>
+    <% end %>
+  <% end %>
+</table>
+<div class="text-center chat_message_form">
+  <%= form_with model: @chat do |f| %>
+    <%= f.text_field :message,  :class => 'w-75 p-3 mb-2 bg-light text-dark rounded' %>
+    <%= f.hidden_field :room_id %>
+  <% end %>
+</div>

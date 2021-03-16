@@ -1,0 +1,19 @@
+// Place all the styles related to the Books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.books_index{
+	display: flex;
+}
+.books_index img{
+	widows: 80px;
+	height: 80px;
+}
+
+@media screen and (max-width: 479px) {
+	.books_index_items p{
+		font-size: 20px;
+	}
+	.books_index_items span{
+		font-size: 25px;
+	}
+}

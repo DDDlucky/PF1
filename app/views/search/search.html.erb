@@ -1,0 +1,47 @@
+<h2><%= "#{@model} search for \"#{@content}\"" %> </h2>
+<% if @datas.blank?  %>
+<p>該当データはありません</p>
+<% else %>
+  <% if @model == "Users" %>
+    <table class='table'>
+      <thead>
+        <tr>
+          <th>image</th>
+          <th>name</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @datas.each do |user| %>
+          <tr>
+            <td><%= attachment_image_tag user, :profile_image, fallback: "no-image-icon.jpg", size: "50x50" %></td>
+            <td><%= user.name %></td>
+            <td><%= "フォロー数：#{user.following.count}" %></td>
+            <td><%= "フォロワー数：#{user.followers.count}" %></td>
+            <td><%= link_to 'Show', user_path(user), class: "user_#{user.id}" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <% elsif @model = "Books" %>
+    <table class='table'>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Title</th>
+          <th>Opinion</th>
+          <th colspan="2"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @datas.each do |book| %>
+          <tr>
+            <td><%= attachment_image_tag book.user, :profile_image, fallback: "no-image-icon.jpg", size: "50x50" %></td>
+            <td><%= link_to "#{book.title}", book_path(book) %></td>
+            <td><%= book.body %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <% end %>
+<% end %>

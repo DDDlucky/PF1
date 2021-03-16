@@ -1,0 +1,36 @@
+// Place all the styles related to the chats controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// chats_showのccsはここから
+.chat_show_top h2{
+	margin-bottom: 20px;
+}
+.chat_table{
+	margin: 0 auto;
+	width: 95%;
+  	table-layout: fixed;
+  	margin-bottom: 100px;
+}
+.caht_table_current_name{
+	text-align: left;
+	font-size: 20px;
+	padding-bottom: 30px;
+}
+.caht_table_user_name{
+	text-align: right;
+	font-size: 20px;
+	padding-bottom: 30px;
+}
+.chat_table td{
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chat_message_form{
+	margin-top: 50px;
+	z-index: 9999;
+	bottom: 10px;
+	position: fixed;
+	width: 100%;
+}
