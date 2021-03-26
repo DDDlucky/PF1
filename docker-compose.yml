@@ -1,0 +1,49 @@
+# docker-composeのバージョンを指定します。今回は'3'を使用。
+version: "3"
+
+# 起動するコンテナの定義を行います。このファイルではdb, db-test , webの三つを定義しています。
+services:
+  db:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password # デフォルトの認証形式をmysql_native_passwordに変更。MySQL5.0系なら不要。
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: appname_development
+      MYSQL_USER: root #任意のユーザー
+      MYSQL_PASSWORD: password
+      TZ: Asia/Tokyo
+    volumes:
+      - ./mysql/mysql_data:/var/lib/mysql
+      - ./logs:/var/log/mysql
+      - ./mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+    ports:
+      - "4306:3306"
+
+  db-test:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: appname_test
+      MYSQL_USER: root
+      MYSQL_PASSWORD: password
+      TZ: Asia/Tokyo
+    volumes:
+      - ./mysql/my.cnf:/etc/mysql/conf.d/my.cnf
+    tmpfs:
+      - /var/lib/mysql
+      - /var/log/mysql
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: /bin/sh -c "rm -f /workdir/tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    tty: true
+    stdin_open: true
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/workdir
