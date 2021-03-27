@@ -16,6 +16,7 @@ ADD Gemfile.lock /workdir/Gemfile.lock
 # ENVなしで実行したところエラーが出た。BUNDLER_VERSIONを指定することで回避。
 ENV BUNDLER_VERSION 2.2.15
 RUN gem install bundler
+RUN bundle update refile
 RUN bundle install
 
 # ホスト側（ローカル）の全てのディレクトリをDocekrコンテナの/workdir配下に追加。

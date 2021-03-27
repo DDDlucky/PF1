@@ -40,9 +40,6 @@ jobs:
           name: bundler install
           command: |
             gem install bundler -v 2.2.15
-      - run:
-          name: bundle update
-          command: bundle update refile
       # Run rspec in parallel
       - ruby/rspec-test
       - ruby/rubocop-check
