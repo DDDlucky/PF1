@@ -9,7 +9,7 @@ jobs:
       - image: circleci/ruby:2.5.1-node-browsers
         environment:
           BUNDLE_PATH: vendor/bundle
-          BUNDLER_VERSION: 2.1.4
+          BUNDLER_VERSION: 2.2.15
     steps:
       - checkout
       - ruby/install-deps
@@ -21,7 +21,7 @@ jobs:
         environment:
           DB_HOST: 127.0.0.1
           RAILS_ENV: test
-          BUNDLER_VERSION: 2.1.4
+          BUNDLER_VERSION: 2.2.15
       - image: circleci/mysql:8.0
         command: --default-authentication-plugin=mysql_native_password
         environment:
@@ -39,7 +39,7 @@ jobs:
       - run:
           name: bundler install
           command: |
-            gem install bundler -v 2.1.4
+            gem install bundler -v 2.2.15
       # Run rspec in parallel
       - ruby/rspec-test
       - ruby/rubocop-check

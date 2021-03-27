@@ -14,7 +14,7 @@ ADD Gemfile.lock /workdir/Gemfile.lock
 
 # Gemfileのbundle install　
 # ENVなしで実行したところエラーが出た。BUNDLER_VERSIONを指定することで回避。
-ENV BUNDLER_VERSION 2.1.4
+ENV BUNDLER_VERSION 2.2.15
 RUN gem install bundler
 RUN bundle install
 
