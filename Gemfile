@@ -80,7 +80,7 @@ gem 'dotenv-rails'
 #   gem 'mysql2'
 # end
 
-gem 'carrierwave'
+# gem 'carrierwave'
 gem 'fog-aws'
 
 gem 'rakuten_web_service'
