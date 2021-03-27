@@ -6,7 +6,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.6.3-node-browsers
+      - image: circleci/ruby:2.6.3-stretch-node
         environment:
           BUNDLE_PATH: vendor/bundle
           BUNDLER_VERSION: 2.2.15
@@ -17,7 +17,7 @@ jobs:
   test:
     parallelism: 3
     docker:
-      - image: circleci/ruby:2.6.3-node-browsers
+      - image: circleci/ruby:2.6.3-stretch-node
         environment:
           DB_HOST: 127.0.0.1
           RAILS_ENV: test
