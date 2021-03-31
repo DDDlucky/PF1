@@ -5,6 +5,14 @@ git push origin develop
 
 
 
+docker-compose up -d
+
+docker-compose ps
+
+docker-compose exec web bash
+
+
+
 
 
 
